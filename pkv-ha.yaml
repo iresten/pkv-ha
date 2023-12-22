@@ -11,7 +11,7 @@ blueprint:
       description: IKEA remote to use
       selector:
         device:
-          integration: ZHA
+          integration: ezsp
           manufacturer: IKEA of Sweden
           model: TRADFRI on/off switch
     light:
