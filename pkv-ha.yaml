@@ -11,7 +11,7 @@ blueprint:
       description: IKEA remote to use
       selector:
         device:
-          integration: deconz
+          integration: zigbee
           manufacturer: IKEA of Sweden
           model: TRADFRI on/off switch
     light:
