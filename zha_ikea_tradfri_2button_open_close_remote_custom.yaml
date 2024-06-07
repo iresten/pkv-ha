@@ -15,14 +15,14 @@ blueprint:
 
   input:
     remote:
-      name: IKEA TRADFRI remote control
+      name: IKEA TRADFRI open/close remote control
       description: Select the remote control you wish to use.
       selector:
         device:
           filter:
             - integration: zha
               manufacturer: IKEA of Sweden
-              model: TRADFRI open/close
+              model: TRADFRI open/close remote
     on_short:
       name: Short Press - On Button
       description: The action to perform on Short Press of the On Button
