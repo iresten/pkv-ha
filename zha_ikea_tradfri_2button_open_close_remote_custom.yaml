@@ -51,13 +51,13 @@ action:
       - conditions:
           - condition: template
             value_template: '{{ trigger.event.data.command == "up_open" }}'
-        sequence: !input on_short
+        sequence: !input up_open
 
       # Short-Press the close button
       - conditions:
           - condition: template
             value_template: '{{ trigger.event.data.command == "down_close" }}'
-        sequence: !input off_short
+        sequence: !input down_close
 
     # Any other event will cancel the repeat loops (i.e. releasing the [on|off] button)
     default: []
