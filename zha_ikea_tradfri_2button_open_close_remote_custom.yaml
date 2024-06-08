@@ -23,27 +23,15 @@ blueprint:
             - integration: zha
               manufacturer: IKEA of Sweden
               model: TRADFRI open/close remote
-    on_short:
-      name: Short Press - On Button
-      description: The action to perform on Short Press of the On Button
+    up_open:
+      name: Short Press open button
+      description: The action to perform on Short Press of the open Button
       selector:
         action:
       default: []
-    off_short:
-      name: Short Press - Off Button
-      description: The action to perform on Short Press of the Off Button
-      selector:
-        action:
-      default: []
-    on_long:
-      name: Long Press - On Button
-      description: The action to perform on Long Press of the On Button
-      selector:
-        action:
-      default: []
-    off_long:
-      name: Long Press - Off Button
-      description: The action to perform on Long Press of the Off Button
+    down_close:
+      name: Short Press close button
+      description: The action to perform on Short Press of the close Button
       selector:
         action:
       default: []
@@ -59,29 +47,17 @@ trigger:
 
 action:
   - choose:
-      # Short-Press the on button
+      # Short-Press the open button
       - conditions:
           - condition: template
-            value_template: '{{ trigger.event.data.command == "on" }}'
+            value_template: '{{ trigger.event.data.command == "up_open" }}'
         sequence: !input on_short
 
-      # Long-Press the on button
+      # Short-Press the close button
       - conditions:
           - condition: template
-            value_template: '{{ trigger.event.data.command == "move_with_on_off" }}'
-        sequence: !input on_long
-
-      # Short-Press the off button
-      - conditions:
-          - condition: template
-            value_template: '{{ trigger.event.data.command == "off" }}'
+            value_template: '{{ trigger.event.data.command == "down_close" }}'
         sequence: !input off_short
-
-      # Long-Press the off button
-      - conditions:
-          - condition: template
-            value_template: '{{ trigger.event.data.command == "move" }}'
-        sequence: !input off_long
 
     # Any other event will cancel the repeat loops (i.e. releasing the [on|off] button)
     default: []
