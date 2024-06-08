@@ -8,7 +8,7 @@ blueprint:
   name: ZHA - IKEA TRADFRI - 2 Button Remote Open/Close - Custom Actions
 
   description: >-
-    This automation simulates the use of the IKEA TRADFRI on/off switch
+    This automation simulates the use of the IKEA TRADFRI open/close switch
     connected through ZHA.
 
   domain: automation
@@ -36,7 +36,7 @@ blueprint:
         action:
       default: []
 
-mode: restart
+mode: single
 max_exceeded: silent
 
 trigger:
