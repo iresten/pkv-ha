@@ -21,7 +21,6 @@ blueprint:
         device:
           filter:
             - integration: zha
-              manufacturer: IKEA of Sweden
               model: TRADFRI open/close remote
     up_open:
       name: Short Press open button
