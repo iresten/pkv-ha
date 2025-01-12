@@ -34,6 +34,12 @@ blueprint:
       selector:
         action:
       default: []
+    up_long:
+      name: Long Press open button
+      description: The action to perform on Long Press of the open Button
+      selector:
+        action:
+      default: []
 
 mode: single
 max_exceeded: silent
